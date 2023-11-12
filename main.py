@@ -2,14 +2,11 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from app.API.Controllers import userController
-from app.API.databse import SessionLocal
-
-from app.API.Models.testTable import SystemUser
+from app.API.Controllers import user_controller
 
 
 app = FastAPI()
-app.include_router(userController.router)
+app.include_router(user_controller.router)
 
 @app.get("/about")
 def about():
