@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-bs-theme="dark">
     <head>
         <title>{% block title %}Simple Blog{% endblock %}</title>
         <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', path='/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
     </head>
 <body>
     <h1>{% block heading %}Variable{% endblock %}</h1>

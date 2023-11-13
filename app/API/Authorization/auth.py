@@ -4,6 +4,7 @@ from fastapi import Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer
 from passlib.context import CryptContext
 from jose import JWTError, jwt
+from pydantic import BaseModel
 from app.API.Models.system_user_table import SystemUser
 
 from app.API.database import session_local
@@ -52,5 +53,9 @@ async def get_current_user(token: str = Depends(oauth_2_scheme)):
     session.close()
     
     return user
+
+class LoginForm(BaseModel):
+    username: str = ""
+    password: str = ""
     
     

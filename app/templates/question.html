@@ -1,32 +1,33 @@
 {% extends "base.html" %}
 
-{% block title %}Simple Blog - Blog Page{% endblock %}
+    {% block title %}DPR{% endblock %}
+    {% block heading %}Dense passage retreiver :Q&A{% endblock %}
 
-{% block heading %}Simple Blog - Blog Page{% endblock %}
-
-{% block content %}
-    <h2>Total Number of Posts: {{ posts|length }}</h2>
-
-    {% for post in posts %}
-        <div class="post">
-
-            {% if post.status == 'published' %}
-                <h3>{{ post.title }}</h3>
-                <p>{{ post.content|truncate }}</p>
-                <p>Published on: {{ post.publication_date }}</p>
-
-                <h4>Comments:</h4>
-                <ul>
-                    {% for comment in post.comments %}
-                        <li class="comment">{{ comment.author }}-: {{ comment.content }}</li>
-                        
-
-                    {% endfor %}
-                </ul>
-            {% else %}
-                <p>This post is still in draft mode.</p>
-            {% endif %}
+    {% block content %}
+    <div class="container" style="min-height: 500px">
+        <div class="row">
+            <label for="question"> Zadaj pytanie </label>
+            <input class="question-input" id="question"/>
         </div>
-        <hr>
-    {% endfor %}
-{% endblock %}
+    </div>
+    {% endblock %} 
+
+
+    <!--
+            <h2>Total Number of Posts: {{ posts|length }}</h2>
+
+            {% for post in posts %}
+                <div>
+
+                    {% if post.status == 'published' %}
+                        <h3>{{ post.title }}</h3>
+                        <p>{{ post.content|truncate }}</p>
+                        <p>Published on: {{ post.publication_date }}</p>
+                        
+                    {% else %}
+                        <p>This post is still in draft mode.</p>
+                    {% endif %}
+                </div>
+                <hr>
+            {% endfor %}
+    -->
