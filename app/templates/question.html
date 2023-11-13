@@ -4,8 +4,8 @@
     {% block heading %}Dense passage retreiver :Q&A{% endblock %}
 
     {% block content %}
-    <div class="container" style="min-height: 500px">
-        <div class="row">
+    <div class="container d-flex align-items-center justify-content-center" style="min-height: 300px;">
+        <div class="row" style="min-width: 800px;">
             <label for="question"> Zadaj pytanie </label>
             <input class="question-input" id="question"/>
         </div>
@@ -13,21 +13,5 @@
     {% endblock %} 
 
 
-    <!--
-            <h2>Total Number of Posts: {{ posts|length }}</h2>
 
-            {% for post in posts %}
-                <div>
-
-                    {% if post.status == 'published' %}
-                        <h3>{{ post.title }}</h3>
-                        <p>{{ post.content|truncate }}</p>
-                        <p>Published on: {{ post.publication_date }}</p>
-                        
-                    {% else %}
-                        <p>This post is still in draft mode.</p>
-                    {% endif %}
-                </div>
-                <hr>
-            {% endfor %}
-    -->
+    

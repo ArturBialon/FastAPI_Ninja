@@ -32,3 +32,12 @@ async def process_login(request: Request, form: LoginForm):
     # Redirect or return a response based on the login result
     return {"message": "Login successful"}
 
+    #     <hr>
+    #             <div>
+    #                 {% if dpr.published == true %}
+    #                     <p>{{ dpr.response }}</p>
+    #                     
+    #                 {% else %}
+    #                     <p>Waiting for result.</p>
+    #                {% endif %}
+    #            </div>
