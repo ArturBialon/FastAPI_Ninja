@@ -4,12 +4,38 @@
     {% block heading %}Dense passage retreiver :Q&A{% endblock %}
 
     {% block content %}
-    <div class="container d-flex align-items-center justify-content-center" style="min-height: 300px;">
-        <div class="row" style="min-width: 800px;">
-            <label for="question"> Zadaj pytanie </label>
-            <input class="question-input" id="question"/>
+        {% if encoded_jwt == "" %}
+        <div class="container" style="min-height: 500px; max-width: 400px">
+            <form method="post" action="/login">
+                <div class="col mt-5">
+                    <div class="row mb-2">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" value="{{ form.username }}">
+                    </div>
+                    <div class="row mb-2">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" value="{{ form.password }}">
+                    </div>
+                    <div class="row mt-5">
+                        <button class="button btn btn-primary" type="submit">Login</button>
+                    </div>
+                </div>
+            </form>
+            {% if error_message %}
+            <div class="row mt-5">
+                <p style="color: red;">{{ error_message }}</p>
+            </div>
+            {% endif %}
         </div>
-    </div>
+        {% else %}
+        <div class="container d-flex align-items-center justify-content-center" style="min-height: 300px;">
+            <div class="row" style="min-width: 800px;">
+                <label for="question"> Zadaj pytanie </label>
+                <input class="question-input" id="question"/>
+            </div>
+        </div>
+        {% endif %}
+        
     {% endblock %} 
 
 
